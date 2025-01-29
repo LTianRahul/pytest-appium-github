@@ -18,7 +18,7 @@ def test_setup_ios(request):
             "app": "lt://APP10160212451735552335123100"
         }
     })
-    driver = webdriver.Remote("https://rahulkumarlambdatest:dboZK7so8koMnIR1tN11aKfMgxyKtDpb90IlyaCj4n6n7tQeK6@mobile-hub.lambdatest.com/wd/hub", options=options)   #Add LambdaTest username and accessKey here
+    driver = webdriver.Remote("https://{LT_USERNAME}:{LT_ACCESS_KEY}@mobile-hub.lambdatest.com/wd/hub", options=options)   #Add LambdaTest username and accessKey here
     request.cls.driver = driver
     
     yield driver
