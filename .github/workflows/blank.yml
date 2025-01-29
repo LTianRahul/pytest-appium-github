@@ -25,7 +25,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-
+          
+      - name: Debug File Paths
+        run: ls -R
+        
       - name: Run Pytest Appium Tests on LambdaTest
         env:
           LT_USERNAME: "rahulkumarlambdatest"
