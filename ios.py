@@ -12,7 +12,7 @@ def test_setup_ios(request):
     caps["platformVersion"] = "14"
     caps["app"] = "lt://APP10160212451735552335123100"     #Enter the app (.ipa) url here
     caps["isRealMobile"] = True
-    caps['build'] = build
+    caps['build'] = "build"
     caps['name'] = test_name
     caps['project'] = "IOS Pytest"
     driver = webdriver.Remote("https://rahulkumarlambdatest:dboZK7so8koMnIR1tN11aKfMgxyKtDpb90IlyaCj4n6n7tQeK6@mobile-hub.lambdatest.com/wd/hub", caps)   #Add LambdaTest username and accessKey here
