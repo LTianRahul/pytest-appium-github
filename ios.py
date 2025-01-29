@@ -23,7 +23,7 @@ def test_setup_ios(request):
     if not lt_username or not lt_access_key:
         raise ValueError("LambdaTest username or access key is not set.")
     
-    driver = webdriver.Remote("https://{LT_USERNAME}:{LT_ACCESS_KEY}@mobile-hub.lambdatest.com/wd/hub", caps)   #Add LambdaTest username and accessKey here
+    driver = webdriver.Remote("https://${{ secrets.LT_USERNAME }}:${{ secrets.LT_ACCESS_KEY }}@mobile-hub.lambdatest.com/wd/hub", caps)   #Add LambdaTest username and accessKey here
     request.cls.driver = driver
     
     yield driver
