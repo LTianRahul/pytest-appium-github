@@ -34,4 +34,4 @@ jobs:
           LT_USERNAME: "rahulkumarlambdatest"
           LT_ACCESS_KEY: "dboZK7so8koMnIR1tN11aKfMgxyKtDpb90IlyaCj4n6n7tQeK6"
         run: |
-          pytest test_ios.py 
+          pytest tests/test_ios.py 
