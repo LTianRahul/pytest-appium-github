@@ -16,14 +16,14 @@ def test_setup_ios(request):
     caps['name'] = test_name
     caps['project'] = "IOS Pytest"
      # Accessing LT_USERNAME and LT_ACCESS_KEY from environment variables
-    LT_USERNAME = os.environ.get('LT_USERNAME')
-    LT_ACCESS_KEY = os.environ.get('LT_ACCESS_KEY')
+    LT_USERNAME = ${{ secrets.LT_USERNAME }}
+    LT_ACCESS_KEY = ${{ secrets.LT_ACCESS_KEY }}
     
     # Make sure both are set correctly in the environment
     if not lt_username or not lt_access_key:
         raise ValueError("LambdaTest username or access key is not set.")
     
-    driver = webdriver.Remote("https://${{ secrets.LT_USERNAME }}:${{ secrets.LT_ACCESS_KEY }}@mobile-hub.lambdatest.com/wd/hub", caps)   #Add LambdaTest username and accessKey here
+    driver = webdriver.Remote("https://{LT_USERNAME}:{LT_ACCESS_KEY}@mobile-hub.lambdatest.com/wd/hub", caps)   #Add LambdaTest username and accessKey here
     request.cls.driver = driver
     
     yield driver
