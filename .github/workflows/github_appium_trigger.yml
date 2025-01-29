@@ -34,7 +34,7 @@ jobs:
         
       - name: Run Pytest Appium Tests on LambdaTest
         env:
-          LT_USERNAME: "rahulkumarlambdatest"
-          LT_ACCESS_KEY: "dboZK7so8koMnIR1tN11aKfMgxyKtDpb90IlyaCj4n6n7tQeK6"
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
         run: |
           pytest tests/test_ios.py 
