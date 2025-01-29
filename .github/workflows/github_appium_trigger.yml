@@ -26,6 +26,9 @@ jobs:
         run: |
           pip install -r requirements.txt
           
+      - name: Debug Environment Variables
+        run: echo "LT_USERNAME=${{ secrets.LT_USERNAME }} LT_ACCESS_KEY=${{ secrets.LT_ACCESS_KEY }}"
+        
       - name: Debug File Paths
         run: ls -R
         
